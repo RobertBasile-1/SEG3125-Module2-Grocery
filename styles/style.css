@@ -1,0 +1,73 @@
+.container {
+	width: 900px;
+	height: 600px;
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+	margin: auto;	
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	padding: 0 0 0 0;
+
+}
+#next-btn{
+	width: 10%;
+	border-radius: 0px;
+	border: 0px;
+	position: relative;
+	left: 47px;
+	top: 2px;
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+#Client{
+	width: 900px;
+	height: 500px;
+	padding: 14px 16px;
+	display: block;
+}
+
+#Products{
+	width: 900px;
+	height: 500px;
+	padding: 14px 16px;
+	display: none;
+}
+
+#Carts{
+	width: 900px;
+	height: 500px;
+	padding: 14px 16px;
+	display: none;
+}
+
+
+#tablink{
+	display: flex;
+}
+
+.form-control{
+	width: 25%;
+}
+
+#tablink button {
+	background-color: #555;
+	color: white;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	width: 300px;
+	height: 100px;
+	position: relative;
+	top:-42%;
+  	align-items: center;
+}
+  
+  .tablink:hover {
+	background-color: #777;
+  }

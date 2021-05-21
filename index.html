@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link href='https://css.gg/shopping-cart.css' rel='stylesheet'>
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <link href='https://css.gg/profile.css' rel='stylesheet'>
+    <link href='https://css.gg/shopping-bag.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href='https://css.gg/arrow-right.css' rel='stylesheet'>
+   
+  </head>
+
+  <body>
+    <h2 style="text-align: center;">Welcome to RobShop!</h2>
+    <div class="container">
+      <div id = "tablink">
+        <button style="background-color: #007bff; font-size: 32px;font-family: Helvetica, sans-serif;" onclick="openTab('Client','Right')" id="client-btn"> <i class="gg-profile"></i>Clients</button>
+        <button style="background-color: #28a745; font-size: 32px; font-family: Helvetica, sans-serif;" onclick="openTab('Products','Right')" id="product-btn"> <i class="gg-shopping-cart"></i> Products</button>
+        <button style="background-color: #ffc107; font-size: 32px;font-family: Helvetica, sans-serif;" onclick="openTab('Carts','Right')"  id="cart-btn"> <i class="gg-shopping-bag"></i> Cart</button>
+      </div> 
+
+      <div id= "Client" class = "tab w3-animate-right">
+        <h3>Client Information</h3>
+        <p>Tell us a bit about you.</p>
+    
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" style="font-size: 16px;" class="form-label"><b>First name:</b></label>
+          <input type="text" class="form-control" id="firstNameInput" placeholder="Name">
+        </div>
+  
+          <fieldset class="row mb-3" style="border:none;padding: 0;">
+            <legend style="font-weight:bold;font-size: 16px; font-family: Helvetica, sans-serif;" class="col-form-label pt-0">Based on the following options chose the options that will meet your needs.</legend>
+            <p style="font-family: Helvetica, sans-serif; margin:0;padding:0 11.25px 6.625px;color: red;">*Required</p>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" id ="nutAllergies" type="checkbox">
+                <label class="form-check-label" for="gridRadios1">Nut allergies</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="vegtarian" type="checkbox">
+                <label class="form-check-label" for="gridRadios2">Vegetarian</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="glutenFree" type="checkbox">
+                <label class="form-check-label" for="gridRadios2">Gluten Free</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" id="lactose-intolerant" type="checkbox">
+                <label class="form-check-label" for="gridRadios2">Lactose-intolerant</label>
+              </div>
+            </div>
+          </fieldset> 
+      
+        <fieldset class="row mb-3" style="border:none;padding: 0;">
+          <legend style="font-weight:bold; font-family: Helvetica, sans-serif; font-size: 16px;" class="col-form-label pt-0">What is your produce preference?</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+              <label class="form-check-label" for="gridRadios1">Organic products</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+              <label class="form-check-label" for="gridRadios2">Non-organic products</label>
+            </div>
+          </div>  
+        </fieldset>
+
+        
+        <fieldset class="row mb-3" style="border:none;padding: 0;">
+          <div class="col-sm-10" style="display: flex;"> 
+             <p style=" font-weight:bold; font-family: Helvetica, sans-serif; font-size: 16px; padding-right: 15px;"> What is your current budget status?:</p>  
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio1">Small</label>
+            
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio2">Medium</label>
+            
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+              <label class="btn btn-outline-primary" for="btnradio3">High</label>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="next-btn" type="button"  onclick="openTab('Products','Right')" >Next</button>
+        </fieldset>
+       
+ 
+           
+        
+      </div>
+    
+      <div id="Products" class ="tab w3-animate-right">
+        <p id="welcomeMsg">Hello</p>
+      </div>
+      
+
+      <div id="Carts" class ="tab w3-animate-right">
+        <p>hello</p>
+      </div>
+
+  </div>
+     
+
+  
+    
+  </body>
+
+  <script src="scripts/main.js"></script>
+
+</html>
