@@ -33,76 +33,83 @@
     
         <div class="mb-3">
           <label for="exampleFormControlInput1" style="font-size: 16px;" class="form-label"><b>First name:</b></label>
-          <input type="text" class="form-control" id="firstNameInput" placeholder="Name">
+          <p style="font-family: Helvetica, sans-serif; margin-bottom:5px;padding:0px;color: red;">*Required</p>
+          <input type="text" class="form-control" id="firstNameInput" placeholder="Name"  onchange ="displayListItems('addUserOptions')">
         </div>
-  
-          <fieldset class="row mb-3" style="border:none;padding: 0;">
-            <legend style="font-weight:bold;font-size: 16px; font-family: Helvetica, sans-serif;" class="col-form-label pt-0">Based on the following options chose the options that will meet your needs.</legend>
-            <p style="font-family: Helvetica, sans-serif; margin:0;padding:0 11.25px 6.625px;color: red;">*Required</p>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" id ="nutAllergies" type="checkbox">
-                <label class="form-check-label" for="gridRadios1">Nut allergies</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" id="vegtarian" type="checkbox">
-                <label class="form-check-label" for="gridRadios2">Vegetarian</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" id="glutenFree" type="checkbox">
-                <label class="form-check-label" for="gridRadios2">Gluten Free</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" id="lactose-intolerant" type="checkbox">
-                <label class="form-check-label" for="gridRadios2">Lactose-intolerant</label>
-              </div>
-            </div>
+
+          <fieldset class="row mb-2" style="border:none;margin:0;padding: 0; ">
+            <legend style=" padding: 0px;font-weight:bold;font-size: 16px; font-family: Helvetica, sans-serif;" class="col-form-label pt-0"> Based on the following options chose the options that will meet your needs.</legend>
+            <p style="font-family: Helvetica, sans-serif; margin-bottom:5px;padding:0px;color: red;">*Required</p>
+          
+
+            <select id="categorie" style="width:25%;" class="form-select form-select-mb-3 mb-3" aria-label=".form-select-sm example" onchange="displayListItems('addUserOptions')">
+              <option value=""></option>
+              <option value="None">No preference</option>
+              <option value="nutFree">Nut Free</option>
+              <option value="lactoseFree">Lactose Free</option>
+              <option value="lactoseAndNut">Lactose Free & Nut Free</option>  
+            </select>
+            
           </fieldset> 
       
-        <fieldset class="row mb-3" style="border:none;padding: 0;">
-          <legend style="font-weight:bold; font-family: Helvetica, sans-serif; font-size: 16px;" class="col-form-label pt-0">What is your produce preference?</legend>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-              <label class="form-check-label" for="gridRadios1">Organic products</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-              <label class="form-check-label" for="gridRadios2">Non-organic products</label>
-            </div>
-          </div>  
-        </fieldset>
+          <fieldset class="row mb-3" style="border:none;padding: 0;">
+            <legend style="font-weight:bold; font-family: Helvetica, sans-serif; font-size: 16px;" class="col-form-label pt-0">What is your produce preference?</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="organicProducts" value="organicProducts"  onchange ="displayListItems('addUserOptions')" >
+                <label class="form-check-label" for="gridRadios1">Organic products</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="nonOrganicProduct" value="nonOrganicProduct" onchange ="displayListItems('addUserOptions')" >
+                <label class="form-check-label" for="gridRadios2">Non-organic products</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="neither"  onchange ="displayListItems('addUserOptions')" >
+                <label class="form-check-label" for="gridRadios2">Neither</label>
+              </div>
+            </div>  
+          </fieldset>
 
+       
         
         <fieldset class="row mb-3" style="border:none;padding: 0;">
           <div class="col-sm-10" style="display: flex;"> 
              <p style=" font-weight:bold; font-family: Helvetica, sans-serif; font-size: 16px; padding-right: 15px;"> What is your current budget status?:</p>  
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="Small" autocomplete="off" onchange ="displayListItems(this.id,'addUserOptions')" >
               <label class="btn btn-outline-primary" for="btnradio1">Small</label>
             
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="Medium" autocomplete="off" onchange ="displayListItems(this.id,'addUserOptions')">
               <label class="btn btn-outline-primary" for="btnradio2">Medium</label>
             
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" value="High" autocomplete="off" onchange ="displayListItems(this.id,'addUserOptions')">
               <label class="btn btn-outline-primary" for="btnradio3">High</label>
             </div>
           </div>
           <button class="btn btn-primary" id="next-btn" type="button"  onclick="openTab('Products','Right')" >Next</button>
         </fieldset>
-       
- 
-           
         
+      
       </div>
     
       <div id="Products" class ="tab w3-animate-right">
-        <p id="welcomeMsg">Hello</p>
+        <div id = "errorList"></div>
+        <div id = "welcomeMsg">
+          <div id= "targetProd" style="display: flex; color: #28a745;"></div>
+        </div>  
+        <div id = "successList"></div>
+  
+        <button class="btn btn-success" id="submit-btn" type="button"  style="display: none;">Add selected items to cart</button>
+          <div class="list-group" id="addUserOptions" style="overflow: scroll; overflow-x: hidden;"></div>
+          <button class="btn btn-primary" id="previous-btn" type="button"  onclick="openTab('Client','Right')">Previous</button>
+          <button class="btn btn-primary" id="nextCart-btn" type="button"  onclick="openTab('Carts','Right')">Next</button>
       </div>
       
 
       <div id="Carts" class ="tab w3-animate-right">
         <p>hello</p>
+
+        <button class="btn btn-primary" id="previousProduct-btn" type="button"  onclick="openTab('Products','Right')">Previous</button>
       </div>
 
   </div>

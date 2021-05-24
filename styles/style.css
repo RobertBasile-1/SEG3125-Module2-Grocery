@@ -12,15 +12,71 @@
 	padding: 0 0 0 0;
 
 }
+#errorMsg{
+	background-color: #a72828;
+	color: white;
+}
 #next-btn{
 	width: 10%;
-	border-radius: 0px;
-	border: 0px;
-	position: relative;
-	left: 47px;
-	top: 2px;
+	height: 7%;
+	position: absolute;
+	top : 97%;
+	left : 98%;
+	transform: translate(-98%,-97%);
 	font-family: Helvetica, sans-serif;
 	font-size: 14px;
+}
+#submit-btn{
+	height: 10%;
+	width: 30%;
+	margin-right : 0;
+	padding: 0;
+	left:95%;
+	top: 50%;
+	position: absolute;
+	transform: translate(-95%,-50%);
+	background-color: #28a745;
+}
+
+#nextCart-btn{
+	width: 10%;
+	height: 7%;
+	position: absolute;
+	top : 97%;
+	left : 98%;
+	transform: translate(-98%,-97%);
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+#previous-btn{
+	 
+	width: 10%;
+	height: 7%;
+	position: absolute;
+	top :   97%;
+	left :  2%;
+	transform: translate(-2%,-97%);
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+ 
+}
+
+#previousProduct-btn {
+	width: 10%;
+	height: 7%;
+	position: absolute;
+	top :   97%;
+	left :  2%;
+	transform: translate(-2%,-97%);
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+#addUserOptions{
+	left:50%;
+	position: relative;
+	transform: translate(-50%);
 }
 
 #Client{
