@@ -237,26 +237,28 @@ function displayListItems(options){
         checkbox.className = "form-check-input me-1";
         checkbox.type = "checkbox";
         checkbox.name = "product";
+        checkbox.id = productName;
         checkbox.value = productName;
         
       
         // create a label for the checkbox, and also add in HTML DOM
         var label = document.createElement('label');
         label.className = "list-group-item";
-      
+        
         label.htmlFor = productName;
         label.appendChild(checkbox);
         label.appendChild(document.createTextNode(productName));
         s2.appendChild(label);
-      }
-    }  
+      }  
 
     document.getElementById("submit-btn").addEventListener("click",function(){
       successCheck();  
     });
    
+  } else {
+    document.getElementById("welcomeMsg").innerHTML = "";
+  }
 }
-
 document.getElementById("product-btn").addEventListener("click",function(){
   errCheck();
 });
@@ -295,3 +297,44 @@ function errCheck(){
 
  
 } 
+
+
+
+function selectedItems(){
+	
+	var ele = document.getElementsByClassName("form-check-input me-1");
+	var chosenProducts = [];
+	
+	var c = document.getElementById("displayTotal");
+	c.innerHTML = "";
+	
+	// build list of selected item
+	var para = document.createElement("P");
+  
+	para.innerHTML = "<h3 style='display: block;'>You selected : </h3>";
+	para.appendChild(document.createElement("br"));
+	for (i = 0; i < ele.length; i++) { 
+		if (ele[i].checked) {
+			para.appendChild(document.createTextNode(ele[i].value));
+			para.appendChild(document.createElement("br"));
+			chosenProducts.push(ele[i].value);
+		}
+	}
+		
+	// add paragraph and total price
+	c.appendChild(para);
+	c.appendChild(document.createTextNode("Total :" + getTotalPrice(chosenProducts)));
+		
+}
+
+function getTotalPrice(chosenProducts) {
+	totalPrice = 0;
+	for (let i=0; i<products.length; i+=1) {
+		if (chosenProducts.indexOf(products[i].name) > -1){
+			totalPrice += products[i].price;
+		}
+	}
+	return totalPrice;
+}
+
+

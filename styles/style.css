@@ -16,6 +16,26 @@
 	background-color: #a72828;
 	color: white;
 }
+#addUserOptions{
+	max-width: 300px;
+	max-height: 300px;
+	height: 100%;
+	width: 100%;
+	top: 20%;
+}
+
+#welcomeMsg h3{
+	position:absolute; 
+	left:3%;
+	top:20%;
+	transform: translate(-2%,-20%);
+	display: wrap;
+	flex-wrap: wrap;
+	width: 300px;
+ 
+}
+
+
 #next-btn{
 	width: 10%;
 	height: 7%;
@@ -60,6 +80,20 @@
 	font-family: Helvetica, sans-serif;
 	font-size: 14px;
  
+}
+
+#displayTotal{
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	width: 300px;
+	height: 400px;
+	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	border: 1px;
+	background-color: rgb(243, 243, 243);
+	padding: 14px 16px;
+
 }
 
 #previousProduct-btn {
