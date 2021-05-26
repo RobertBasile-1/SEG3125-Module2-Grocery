@@ -109,6 +109,12 @@ function openTab(groceryTab, animName) {
     document.getElementById(groceryTab).style.display = "block";
 }
 
+function sortByPrice(newList) {
+    newList.sort(function(a, b) {
+        return a.price - b.price;
+    });
+}
+
 function assesUserInformation() {
     let listItems = [];
     var userInfo = [];
@@ -138,45 +144,59 @@ function assesUserInformation() {
     let newList;
     if (!(isOrganic.checked || nonOrganic.checked) && userInfo.includes("btnradio1")) {
         newList = listItems.filter((listItems) => { return listItems.budget === "small"; });
+        sortByPrice(newList);
         return newList;
     } else if (!(isOrganic.checked || nonOrganic.checked) && userInfo.includes("btnradio2")) {
         newList = listItems.filter((listItems) => { return listItems.budget === "medium"; });
+        sortByPrice(newList);
         return newList;
     } else if (!(isOrganic.checked || nonOrganic.checked) && userInfo.includes("btnradio3")) {
         newList = listItems.filter((listItems) => { return listItems.budget === "high"; });
+        sortByPrice(newList);
         return newList;
     } else if (isOrganic.checked && userInfo.includes("btnradio1")) {
         newList = listItems.filter((listItems) => { return listItems.organicProducts && listItems.budget === "small"; });
+        sortByPrice(newList);
         return newList;
     } else if (isOrganic.checked && userInfo.includes("btnradio2")) {
         newList = listItems.filter((listItems) => { return listItems.organicProducts && listItems.budget === "medium"; });
+        sortByPrice(newList);
         return newList;
     } else if (isOrganic.checked && userInfo.includes("btnradio3")) {
         newList = listItems.filter((listItems) => { return listItems.organicProducts && listItems.budget === "high"; });
+        sortByPrice(newList);
         return newList;
     } else if (isOrganic.checked) {
         newList = listItems.filter((listItems) => { return listItems.organicProducts; });
+        sortByPrice(newList);
         return newList;
     } else if (nonOrganic.checked && userInfo.includes("btnradio1")) {
         newList = listItems.filter((listItems) => { return listItems.nonOrganicProduct && listItems.budget === "small"; });
+        sortByPrice(newList);
         return newList;
     } else if (nonOrganic.checked && userInfo.includes("btnradio2")) {
         newList = listItems.filter((listItems) => { return listItems.nonOrganicProduct && listItems.budget === "medium"; });
+        sortByPrice(newList);
         return newList;
     } else if (nonOrganic.checked && userInfo.includes("btnradio3")) {
         newList = listItems.filter((listItems) => { return listItems.nonOrganicProduct && listItems.budget === "high"; });
+        sortByPrice(newList);
         return newList;
     } else if (nonOrganic.checked) {
         newList = listItems.filter((listItems) => { return listItems.nonOrganicProduct; });
+        sortByPrice(newList);
         return newList;
     } else if (neither.checked && userInfo.includes("btnradio1")) {
         newList = listItems.filter((listItems) => { return listItems.budget === "small"; });
+        sortByPrice(newList);
         return newList;
     } else if (neither.checked && userInfo.includes("btnradio2")) {
         newList = listItems.filter((listItems) => { return listItems.budget === "medium"; });
+        sortByPrice(newList);
         return newList;
     } else if (neither.checked && userInfo.includes("btnradio3")) {
         newList = listItems.filter((listItems) => { return listItems.budget === "high"; });
+        sortByPrice(newList);
         return newList;
     }
 
