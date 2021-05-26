@@ -111,7 +111,7 @@ function openTab(groceryTab, animName) {
 
 function assesUserInformation() {
     let listItems = [];
-    let userInfo = [];
+    var userInfo = [];
 
     var category = document.getElementById("categorie");
 
@@ -136,10 +136,7 @@ function assesUserInformation() {
     var neither = document.getElementById("neither");
 
     let newList;
-    if (neither.checked) {
-        newList = listItems;
-        return newList;
-    } else if (!(isOrganic.checked || nonOrganic.checked) && userInfo.includes("btnradio1")) {
+    if (!(isOrganic.checked || nonOrganic.checked) && userInfo.includes("btnradio1")) {
         newList = listItems.filter((listItems) => { return listItems.budget === "small"; });
         return newList;
     } else if (!(isOrganic.checked || nonOrganic.checked) && userInfo.includes("btnradio2")) {
@@ -147,12 +144,6 @@ function assesUserInformation() {
         return newList;
     } else if (!(isOrganic.checked || nonOrganic.checked) && userInfo.includes("btnradio3")) {
         newList = listItems.filter((listItems) => { return listItems.budget === "high"; });
-        return newList;
-    } else if (isOrganic.checked) {
-        newList = listItems.filter((listItems) => { return listItems.organicProducts; });
-        return newList;
-    } else if (nonOrganic.checked) {
-        newList = listItems.filter((listItems) => { return listItems.nonOrganicProduct; });
         return newList;
     } else if (isOrganic.checked && userInfo.includes("btnradio1")) {
         newList = listItems.filter((listItems) => { return listItems.organicProducts && listItems.budget === "small"; });
@@ -163,6 +154,9 @@ function assesUserInformation() {
     } else if (isOrganic.checked && userInfo.includes("btnradio3")) {
         newList = listItems.filter((listItems) => { return listItems.organicProducts && listItems.budget === "high"; });
         return newList;
+    } else if (isOrganic.checked) {
+        newList = listItems.filter((listItems) => { return listItems.organicProducts; });
+        return newList;
     } else if (nonOrganic.checked && userInfo.includes("btnradio1")) {
         newList = listItems.filter((listItems) => { return listItems.nonOrganicProduct && listItems.budget === "small"; });
         return newList;
@@ -171,6 +165,18 @@ function assesUserInformation() {
         return newList;
     } else if (nonOrganic.checked && userInfo.includes("btnradio3")) {
         newList = listItems.filter((listItems) => { return listItems.nonOrganicProduct && listItems.budget === "high"; });
+        return newList;
+    } else if (nonOrganic.checked) {
+        newList = listItems.filter((listItems) => { return listItems.nonOrganicProduct; });
+        return newList;
+    } else if (neither.checked && userInfo.includes("btnradio1")) {
+        newList = listItems.filter((listItems) => { return listItems.budget === "small"; });
+        return newList;
+    } else if (neither.checked && userInfo.includes("btnradio2")) {
+        newList = listItems.filter((listItems) => { return listItems.budget === "medium"; });
+        return newList;
+    } else if (neither.checked && userInfo.includes("btnradio3")) {
+        newList = listItems.filter((listItems) => { return listItems.budget === "high"; });
         return newList;
     }
 
@@ -186,12 +192,15 @@ function displayListItems(options) {
     var s2 = document.getElementById(options);
     var userItems = assesUserInformation();
 
+
     s2.className = "list-group";
     s2.style.width = "30%";
     s2.style.left = "50%";
     s2.innerHTML = "";
 
-
+    if (userItems.length == 0) {
+        s2.innerHTML = "NO ITEM FOUND!";
+    }
 
     document.getElementById("submit-btn").style.display = "none";
 
